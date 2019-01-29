@@ -1,7 +1,6 @@
 # Script Basics
 
 # Descriptions of files:
-# * = problem
 
 0- print current working directory.
 1- display contents of current directory.
