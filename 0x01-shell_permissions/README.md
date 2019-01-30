@@ -13,3 +13,7 @@
 10- reference file chmod
 11- execute permissions to subdirectories
 12- create dir with permissions 751
+13- change group of file
+14- change owner and group of file
+15- change owner and group of a symbolic link
+16- change owner of file only if owned by x
