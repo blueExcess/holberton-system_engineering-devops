@@ -4,4 +4,4 @@
 9- not rm command (something similar)
 11- may need work
 19- needs work
-
+102 - use cut & tr and join?

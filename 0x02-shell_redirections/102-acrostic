@@ -1,0 +1,4 @@
+#!/bin/bash
+# need to cut first alpha letters (no case) from first letter of each line (should spell Elizabeth)
+# use tr? (grep not allowed) and printf
+
