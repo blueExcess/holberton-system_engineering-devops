@@ -1,1 +1,6 @@
 #!/usr/bin/env bash
+# 1. Will write string 10x
+
+for _ in {0..9}; do
+    echo "Holberton School"
+done
