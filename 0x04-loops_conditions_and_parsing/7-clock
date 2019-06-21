@@ -1,1 +1,14 @@
 #!/usr/bin/env bash
+# 7. Print out like so - Hour: 0 1 2 3 4 5 ...
+
+declare -i i=0
+j=1
+while ((i < 13)); do
+    echo "Hour: " $i
+    while ((j < 60)); do
+	echo $j
+	((j++))
+    done
+    ((i++))
+    j=1
+done
