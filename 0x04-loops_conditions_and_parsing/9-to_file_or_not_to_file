@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # 9. use if to print stuff about holbertonschool file.
+# check 'help test' to see test stuff.
 
 if [[ -a "holbertonschool" ]]; then
     echo "holbertonschool file exists"
