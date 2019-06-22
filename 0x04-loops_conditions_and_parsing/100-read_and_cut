@@ -1,1 +1,6 @@
 #!/usr/bin/env bash
+# 11. display (and snip) contents of passwd in while loop.
+
+while IFS= read -r line; do
+    echo "$line" | cut -d ":" -f 1,3,6
+done < "/etc/passwd"
