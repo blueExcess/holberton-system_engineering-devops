@@ -1,1 +1,5 @@
 #!/usr/bin/env bash
+# 2. Use previous command and select only processes with "bash"
+#
+
+ps auxf | grep bash
