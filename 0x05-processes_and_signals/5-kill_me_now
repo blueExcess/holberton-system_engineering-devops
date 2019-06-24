@@ -1,1 +1,4 @@
 #!/usr/bin/env bash
+# 5. Write script to murder script #4 (ahhh! such scary, so knives!)
+pid=$(pgrep -f "4-to_infinity_and_beyond")
+kill "$pid"
