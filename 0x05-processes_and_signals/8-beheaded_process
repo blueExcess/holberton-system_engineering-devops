@@ -1,1 +1,5 @@
 #!/usr/bin/env bash
+# 8. Murder process with SUPER MURDER!
+
+pid=$(pgrep -f 7-highlander)
+kill -SIGKILL "$pid"
