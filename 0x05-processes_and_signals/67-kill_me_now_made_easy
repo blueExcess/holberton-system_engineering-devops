@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# 6. Use pkill to murder some program. Not even for money, just for fun.
+pkill -f 7-highlander
