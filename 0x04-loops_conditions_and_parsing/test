@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#this is a 12 hour clock
+
+#59 minutes                      
+h=0
+min=1
+
+while [ $h -lt 13 ]
+do
+    echo "Hour: $h"
+    while [ $h -lt 13 ] && [ $min -lt 60 ]
+    do
+        echo -n "$min" $'\n'
+        : $(( min++ ))
+    done
+    min=1
+    : $(( h++ ))
+done
