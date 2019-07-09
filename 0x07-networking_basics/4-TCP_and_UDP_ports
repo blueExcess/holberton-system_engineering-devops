@@ -1,1 +1,3 @@
 #!/usr/bin/env bash
+# Program to listen through walls and stuff and rob ports of booty.
+netstat --listening --program
