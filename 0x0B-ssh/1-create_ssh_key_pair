@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+# generate RSA key of giant size
 ssh-keygen -b 4096 -lv -N 'betty' -f 'holberton' -t 'rsa'
