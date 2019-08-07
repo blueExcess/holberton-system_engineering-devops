@@ -1,1 +1,7 @@
 #!/usr/bin/env bash
+# install nginx and setup
+
+apt-get install -y nginx
+ufw allow 'Nginx HTTP'
+sed -i 's/<h1>Welcome to nginx!</h1>/<h1>Holberton School</h1>/g' \
+    index.nginx-debian.html
