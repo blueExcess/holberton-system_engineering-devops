@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # install nginx and setup
 
-apt-get install -y nginx
-ufw allow 'Nginx HTTP'
-touch /var/www/html/index.html
-echo 'Holberton School' > /var/www/html/index.html
-sudo service nginx reload
-sudo service nginx reset
+apt-get update
+apt-get --yes install 'nginx'
+mkdir --parents '/var/www/html'
+echo 'Holberton School' > '/var/www/html/index.html'
+service nginx reload
+service nginx restart
