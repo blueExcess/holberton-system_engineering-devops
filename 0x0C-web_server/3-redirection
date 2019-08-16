@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-# install nginx and setup
+# install nginx and setup and redirect
 
-apt-get install -y nginx
-ufw allow 'Nginx HTTP'
-touch /var/www/html/index.html
-echo 'Holberton School' > /var/www/html/index.html
-sudo service nginx reload
-sudo service nginx reset
+apt-get --yes update
+apt-get --yes install 'nginx'
+echo 'Holberton School' > '/var/www/html/index.nginx-debian.html'
+sedsedsed="server_name _;\n\tlocation /redirect_me {\n\t\treturn 301 https://https://www.kerbalspaceprogram.com;\n\t}\n"
+sed -i "s,server_name _;,$sedsedsed," /etc/nginx/sites-available/default
+service nginx reload
+service nginx restart
