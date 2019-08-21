@@ -1,1 +1,43 @@
 #!/usr/bin/env bash
+# script to pull info from dig
+
+dumb_function () {
+RECORD_TYPE=$(dig "$SUB.$DOMAIN" | grep -A1 'ANSWER SECTION' |
+awk '!/ANSWER/ {print $4;}')
+DEST=$(dig "$SUB.$DOMAIN" | grep -A1 'ANSWER SECTION' |
+awk '!/ANSWER/ {print $5;}')
+echo "The subdomain $SUB is a $RECORD_TYPE record and points to $DEST"
+}
+
+other_function () {
+RECORD_TYPE=$(dig "www.$DOMAIN" | grep -A1 'ANSWER SECTION' |
+awk '!/ANSWER/ {print $4;}')
+DEST=$(dig "www.$DOMAIN" | grep -A1 'ANSWER SECTION' |
+awk '!/ANSWER/ {print $5;}')
+echo "The subdomain www is a $RECORD_TYPE record and points to $DEST"
+RECORD_TYPE=$(dig "lb-01.$DOMAIN" | grep -A1 'ANSWER SECTION' |
+awk '!/ANSWER/ {print $4;}')
+DEST=$(dig "lb-01.$DOMAIN" | grep -A1 'ANSWER SECTION' |
+awk '!/ANSWER/ {print $5;}')
+echo "The subdomain lb-01 is a $RECORD_TYPE record and points to $DEST"
+RECORD_TYPE=$(dig "web-01.$DOMAIN" | grep -A1 'ANSWER SECTION' |
+awk '!/ANSWER/ {print $4;}')
+DEST=$(dig "web-01.$DOMAIN" | grep -A1 'ANSWER SECTION' |
+awk '!/ANSWER/ {print $5;}')
+echo "The subdomain web-01 is a $RECORD_TYPE record and points to $DEST"
+RECORD_TYPE=$(dig "web-02.$DOMAIN" | grep -A1 'ANSWER SECTION' |
+awk '!/ANSWER/ {print $4;}')
+DEST=$(dig "web-02.$DOMAIN" | grep -A1 'ANSWER SECTION' |
+awk '!/ANSWER/ {print $5;}')
+echo "The subdomain web-02 is a $RECORD_TYPE record and points to $DEST"
+}
+
+if [ $# -eq 2 ]
+then
+SUB="$2"
+DOMAIN="$1"
+dumb_function "$SUB" "$DOMAIN"
+else
+DOMAIN="$1"
+other_function "$DOMAIN"
+fi
