@@ -35,17 +35,13 @@ defaults
         errorfile 504 /etc/haproxy/errors/504.http
         option forwardfor
 
-frontend www-http
-  bind 35.190.171.244:80
-  reqadd X-Forwarded-Proto:\ http
-  default_backend web-backend
-
-frontend www-https
+frontend www.bluexs.tech
+  bind *:80
   bind *:443 ssl crt /etc/haproxy/ssl/www.bluexs.tech.pem
-  reqadd X-Forwarded-Proto:\ https
   default_backend web-backend
+  redirect scheme https if !{ ssl_fc }
+  
 
 backend web-backend
-  redirect scheme https if !{ ssl_fc }
   server web-1  35.243.186.236:80 check
   server web-2  35.229.115.184:80 check
