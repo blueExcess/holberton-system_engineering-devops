@@ -25,17 +25,17 @@ if __name__ == "__main__":
         if finished:
             count += 1
 
-    # print('Employee {} is done with tasks({}/{}):'.format(name, count, tasks))
+    # print('Employee {} is done with tasks({}/{}):'.format(
+    #     name, count, tasks))
     # for task in todod:
     #     completed = task.get('completed')
     #     if completed:
     #         title = task.get('title')
     #         print("\t {}".format(title))
 
-
     with open('{}.csv'.format(id), 'w') as emp_tasks:
         emp_writer = csv.writer(emp_tasks, delimiter=',', quotechar='"',
-                            quoting=csv.QUOTE_ALL)
+                                quoting=csv.QUOTE_ALL)
         for task in todod:
             uid = task.get('userId')
             comp = task.get('completed')
