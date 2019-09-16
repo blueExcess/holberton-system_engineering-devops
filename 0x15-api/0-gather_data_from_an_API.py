@@ -25,5 +25,7 @@ if __name__ == "__main__":
 
     print('Employee {} is done with tasks({}/{}):'.format(name, count, tasks))
     for task in todod:
-        title = task.get('title')
-        print("\t {}".format(title))
+        completed = task.get('completed')
+        if completed:
+            title = task.get('title')
+            print("\t {}".format(title))
