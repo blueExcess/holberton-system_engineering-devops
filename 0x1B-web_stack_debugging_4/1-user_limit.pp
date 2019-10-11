@@ -1,3 +1,4 @@
+# this does something
 file { 'destroyer of worlds':
     ensure  => present,
     path    => '/etc/security/limits.conf',
